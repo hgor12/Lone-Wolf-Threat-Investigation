@@ -1,5 +1,5 @@
 # Lone-Wolf-Threat-Investigation
-An individual forensic investigation of a suspect's laptop in a simulated threat case. I analyzed a disk image and a memory capture to reconstruct the suspect's activity, and found evidence in memory that was not present anywhere on disk.
+An individual forensic investigation of a suspect's laptop in a simulated threat case. I analyzed a disk image, memory dump and pagefile to reconstruct the suspect's activity, and recovered email correspondence and account credentials from memory that were not present on the disk image.
 
 **Scenario**
 
@@ -14,7 +14,7 @@ Jim Cloudy, increasingly radicalized by gun-control coverage, plans a lone-wolf 
 | Item | Details |
 |---|---|
 | Laptop | Dell Latitude E7470 (S/N 8X4XYF2) |
-| Drive | Samsung SSD 850 Pro 512 GB (S/N S1SANYAF500312A) |
+| Drive | Samsung SSD 850 Pro 512 GB (S/N S250NSAG505708H) |
 | Disk image | Physical image, 9 EnCase (E01) segments, acquired with FTK Imager 3.1.1.8 on April 6, 2018 |
 | Memory | `memdump.mem` |
 | Pagefile | `pagefile.sys` |
@@ -52,9 +52,9 @@ No acquisition hashes were provided for the memory dump or pagefile, so I comput
 
 All evidence was documented on standard forms before and during analysis.
 
-- [Chain of Evidence](forms/Chain_of_Evidence.pdf): transfer of each item from the seizing detective to the examiner
-- [Evidence Inventory](forms/Evidence_Inventory.pdf): description, serial number and custodian for each item
-- [Incident Response Log](forms/Incident_Response_Log.pdf): dated record of each step of the examination
+- [Chain of Evidence](Forms/Chain_of_Evidence.pdf): transfer of each item from the seizing detective to the examiner
+- [Evidence Inventory](Forms/Evidence_Inventory.pdf): description, serial number and custodian for each item
+- [Incident Response Log](Forms/Incident_Response_Log.pdf): dated record of each step of the examination
 
 ---
 
@@ -97,7 +97,7 @@ A file named *Brother chat.gdoc* was found in the Google Drive folder and in the
 
 ## Step 4 — Memory Analysis
 
-Memory analysis was done in Volatility 3 and macOS Terminal. Full commands are in [`memory_analysis_steps.pdf`](memory_analysis_steps.pdf).
+Memory analysis was done in Volatility 3 and macOS Terminal. Full commands are in [Memory Analysis Steps](Memory%20Analysis%20Steps.pdf).
 
 ### Image information and running processes
 
@@ -186,12 +186,14 @@ Ten screenshots and one deleted image document target reconnaissance and escape 
 
 ## Reflection
 
-This case had taught me how much evidence only exists in memory. The email thread between Jim and Paul and the Dropbox and Box passwords were not present on the disk image at all. Recovering them required working with raw text extracted from the memory dump, which was disorganized and contained many repeated email fragments. I developed a series of `strings`, `grep` and `sed` commands to clean that data into a readable timeline sorted by date, and this process proved to be as important as the search itself.
+This case taught me how much evidence only exists in memory. The email thread between Jim and Paul and the Dropbox and Box passwords were not present on the disk image at all. Recovering them required working with raw text extracted from the memory dump, which was disorganized and contained many repeated email fragments. I developed a series of `strings`, `grep` and `sed` commands to clean that data into a readable timeline sorted by date, and this process proved to be as important as the search itself.
 
 I also learned that patterns in the data can guide an investigation. Counting how often each AWS key appeared in memory identified the most significant one. Sorting 103 browser entries into categories revealed how the subject's planning progressed, which was difficult to see in the raw history.
 
+---
+
 ## Files
 
-- `Lone_Wolf_Forensic_Report.pdf` — full investigation report
-- `memory_analysis_steps.pdf` — Volatility 3 and Terminal commands used for memory analysis
-- `forms/` — chain of evidence, evidence inventory and incident response log
+- `Lone Wolf Forensic Report.pdf` — full investigation report
+- `Memory Analysis Steps.pdf` — Volatility 3 and Terminal commands used for memory analysis
+- `Forms/` — chain of evidence, evidence inventory, and incident response log 
