@@ -1,9 +1,9 @@
 # Lone-Wolf-Threat-Investigation
 An individual forensic investigation of a suspect's laptop in a simulated threat case. I analyzed a disk image and a memory capture to reconstruct the suspect's activity, and found evidence in memory that was not present anywhere on disk.
 
-Scenario: Lone Wolf scenario from Digital Corpora
-
 **Scenario**
+
+> Lone Wolf scenario from [Digital Corpora](https://digitalcorpora.org/corpora/scenarios/2018-lone-wolf-scenario/)
 
 Jim Cloudy, increasingly radicalized by gun-control coverage, plans a lone-wolf attack and stores his writings across several cloud accounts. After his brother Paul finds the plans in shared documents and alerts police, a search warrant recovers Jim's laptop in Manhattan.
 
