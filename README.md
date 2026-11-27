@@ -42,8 +42,19 @@ No acquisition hashes were provided for the memory dump or pagefile, so I comput
 
 | File | MD5 | SHA-1 |
 |---|---|---|
+| E01 image (9 segments) | `7af48fa65519e84246b1729e5b68f140` | `694e26624d1ea029eb50d793b198edf85be4b4fc` |
 | `memdump.mem` | `694d1b7c761b50ff5145e0fed4f4f411` | `072d118d528d6f17772ef3e5042a0c37906defc9` |
 | `pagefile.sys` | `f2299691fc75e667c12998eac2d2ca8c` | `e4c94667e0d013d6237aa281c08819ad8e03ed05` |
+
+---
+
+## Evidence Handling
+
+All evidence was documented on standard forms before and during analysis.
+
+- [Chain of Evidence](forms/Chain_of_Evidence.pdf): transfer of each item from the seizing detective to the examiner
+- [Evidence Inventory](forms/Evidence_Inventory.pdf): description, serial number and custodian for each item
+- [Incident Response Log](forms/Incident_Response_Log.pdf): dated record of each step of the examination
 
 ---
 
@@ -72,7 +83,7 @@ Two SanDisk Extreme USB drives were connected, found in `SYSTEM\ControlSet001\En
 | USB #1 | AA0102151703553101594 | 2018-03-27 12:11:44 |
 | USB #2 | AA0106031607074702215 | 2018-03-27 09:22:21 GMT |
 
---
+---
 
 ## Step 3 — Cloud Accounts and Storage
 
@@ -181,6 +192,6 @@ I also learned that patterns in the data can guide an investigation. Counting ho
 
 ## Files
 
-- `Lone_Wolf_Forensic_Report.pdf` full investigation report
-- `memory_analysis_steps.pdf` Volatility 3 and Terminal commands used for memory analysis
-- `scripts/` Python script used to convert and categorize the browser history
+- `Lone_Wolf_Forensic_Report.pdf` — full investigation report
+- `memory_analysis_steps.pdf` — Volatility 3 and Terminal commands used for memory analysis
+- `forms/` — chain of evidence, evidence inventory and incident response log
