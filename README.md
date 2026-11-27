@@ -133,10 +133,6 @@ The reconstructed thread (March 29 – April 4, 2018) shows a debate over gun co
 
 I filtered text extracted from memory for platform names (Twitter, Box, Dropbox, Outlook, Live) alongside the subject's username, then searched those lines for credential keywords. This recovered full login credentials for the subject's **Dropbox** and **Box** accounts. Credential values are redacted here.
 
-### Pagefile
-
-I extracted readable text from `pagefile.sys` and searched for the subject's username. No significant information was recovered.
-
 ---
 
 ## Step 5 — Browser History Timeline
